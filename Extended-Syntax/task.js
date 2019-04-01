@@ -11,8 +11,22 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    //return x;
+    let D=b*b-4*a*c;
+    let x1,x2
+
+    if (D > 0) {
+        x1=(-b+Math.sqrt(D))/(2*a);
+        x2=(-b-Math.sqrt(D))/(2*a);
+        return x1, x2;
+    } else if (D==0) {
+        x1=-b/(2*a)
+        return x1;
+    } else if (D < 0) {
+        return "Нет корней"
+
+    }
+    return x;
+    
 }
 
 function calculateDrinkTask(){
@@ -23,7 +37,13 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    // код для задачи №2 писать здесь
+    let year = new Date().getFullYear();
+    if (year == 2019){
+
+        console.log("Не желаете ли олд-фэшн, " + name);
+    }else{
+        console.log("Сожалею" + name + " но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!");
+    }
     //console.log(result)
     //return result;
 }
