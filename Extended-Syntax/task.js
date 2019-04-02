@@ -17,7 +17,7 @@ function getResult(a,b,c){
     if (D > 0) {
         x1=(-b+Math.sqrt(D))/(2*a);
         x2=(-b-Math.sqrt(D))/(2*a);
-        return x1, x2;
+        return [x1, x2];
     } else if (D==0) {
         x1=-b/(2*a)
         return x1;
@@ -37,15 +37,14 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    let year = new Date().getFullYear();
-    if (year == 2019){
-
-        console.log("Не желаете ли олд-фэшн, " + name);
-    }else{
-        console.log("Сожалею" + name + " но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!");
+    let year = new Date().getFullYear() - dateOfBirthday;
+    if (year > 18) {
+        return "Не желаете ли олд-фэшн, " + name;
+    } else {
+        return "Сожалею " + name + " но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!";
     }
-    //console.log(result)
-    //return result;
+    
+    return year;
 }
 
 function calculateAverageRating(){
@@ -55,6 +54,18 @@ function calculateAverageRating(){
 }
 
 function getAverageMark(marks){
-    // код для задачи №3 писать здесь
-    //return averageMark;
+    let Array = [3, 3, 3, 3, 3];
+
+    if (Array.length > 5) {
+        Array.splice(5);
+    }
+
+    let sum = 0; 
+    for (let i = 0; i < Array.length; i++) {
+        sum == Array[i];
+    }
+
+
+    averageMark = sum / Array.length;
+    return averageMark;
 }
