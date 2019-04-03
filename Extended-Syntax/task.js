@@ -22,7 +22,7 @@ function getResult(a,b,c){
         x1=-b/(2*a)
         return x1;
     } else if (D < 0) {
-        return "Нет корней"
+        return [];
 
     }
     return x;
@@ -37,14 +37,14 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    let year = new Date().getFullYear() - dateOfBirthday;
-    if (year > 18) {
+    let age = new Date().getFullYear() - dateOfBirthday;
+    if (age > 18) {
         return "Не желаете ли олд-фэшн, " + name;
     } else {
         return "Сожалею " + name + " но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!";
     }
     
-    return year;
+    return age;
 }
 
 function calculateAverageRating(){
@@ -54,18 +54,18 @@ function calculateAverageRating(){
 }
 
 function getAverageMark(marks){
-    let Array = [3, 3, 3, 3, 3];
+    let marks = [];
 
-    if (Array.length > 5) {
-        Array.splice(5);
+    if (marks.length > 5) {
+        marks.splice(5);
     }
 
     let sum = 0; 
-    for (let i = 0; i < Array.length; i++) {
-        sum == Array[i];
+    for (let i = 0; i < marks.length; i++) {
+        sum == marks[i];
     }
 
 
-    averageMark = sum / Array.length;
+    averageMark = sum / marks.length;
     return averageMark;
 }
