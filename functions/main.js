@@ -30,3 +30,9 @@ function showSolutionsMessage(a, b, c) {
 }
 
 showSolutionsMessage(1, 2, 3);
+
+
+
+function getPersonData(secretData) {
+	
+}

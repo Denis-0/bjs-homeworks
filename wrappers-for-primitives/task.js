@@ -1,3 +1,4 @@
+"use strict"
 function calculateMortgage() {
     let percent = window.percent.value;
     let contribution = window.contribution.value;
@@ -11,7 +12,7 @@ function calculateMortgage() {
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
-    // код для задачи №1 писать здесь
+    
     //return totalAmount;
 }
 
@@ -23,6 +24,13 @@ function sayHello() {
 }
 
 function getGreeting(name) {
-    // код для задачи №2 писать здесь
-    //return greeting;
+    
+
+    if (name == '') {
+        console.log('Привет, мир! Меня зовут Аноним');
+    } else {
+        console.log('Привет, мир! Меня зовут ' + name);
+    }
+    return greeting;
 }
+getGreeting();
