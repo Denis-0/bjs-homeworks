@@ -19,7 +19,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   let S = parseInt(amount) - parseInt(contribution);
   // коофициент для процентной ставки
   let P = parseInt(percent)/100/12
-   //считаем ежемесячный платеж и округляем
+   //считаем ежемесячный платеж
   let monthPay = (S * (P + P / (((1 + P) ** n) - 1)))
   //считаем сумму по кредиту 
   let totalAmount = (monthPay * n)
