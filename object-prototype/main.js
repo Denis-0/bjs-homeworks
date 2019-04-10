@@ -13,7 +13,7 @@ function checkBirthday(birthday) {
         diff = birth - now,
         age = diff / 31536000000;
 
-    return age; 
+    return age > 18; 
 
 
 }
@@ -33,9 +33,7 @@ function getAnimalSound(animal) {
     
     if (!animal) {
         !null === true
-        !undefined === true
-        !"" === true
-        !0 === true
+       return null; 
     }
        return sound; 
 }
