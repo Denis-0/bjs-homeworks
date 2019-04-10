@@ -7,22 +7,22 @@ class Weapon {
 		this.durability = durability;
 		this.range = range;
 	}
-}
-
-class reinforcedWeapon extends Weapon {
 
 }
-	
 
-const arm = new Weapon({
-  name: 'Рука',
-  attack: 1,
-  durability: Infinity,
-  range: 1,
-});
 
-arm.takeDamage(10);
-console.log(arm.durability);
+  const arm = new Weapon({
+    name: 'Рука',
+    attack: 1,
+    durability: Infinity,
+    range: 1,
+  });
+
+  //arm.takeDamage(5);
+  console.log(arm);
+
+
+
 /*
 const bow = new Weapon({
   name: 'Лук',

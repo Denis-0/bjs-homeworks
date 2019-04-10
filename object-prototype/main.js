@@ -7,10 +7,10 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-    let now = 1554854400;
-        date = new Date(2011, 0, 1);
-        birthday = 1293840000;
-        diff = birthday - now;
+    let now = 1554854400,
+        date = new Date(2011, 0, 1),
+        birth = 1293840000,
+        diff = birth - now,
         age = diff / 31536000000;
 
     return age; 
@@ -30,13 +30,14 @@ function initPrintAnimalSound() {
 
 function getAnimalSound(animal) {
     let sound = animal.sound;
-
-    if (animal == 'undefined') {
-        return null
+    
+    if (!animal) {
+        !null === true
+        !undefined === true
+        !"" === true
+        !0 === true
     }
-    if (animal != 'undefined') {
-        return sound;
-    }
+       return sound; 
 }
 
 
@@ -55,7 +56,7 @@ function getAverageMark(marks) {
     let average = 0;
 
     for (let i = 0; i < marks.length; i++) {
-        average += Number.parseInt(marks[i]);
+        average += parseInt(marks[i]);
     }
 
     average = average / marks.length;
