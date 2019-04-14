@@ -7,38 +7,38 @@ class Weapon {
 		this.attack = attack;
 		this.durability = durability;
 		this.range = range;
-    this.durabilityConst = durability;
-  }
+		this.durabilityConst = durability;
+	}
 
-  takeDamage(damage) {
-    if (this.durability != "Infinity") {
-      if (this.durability - damage < 0) {
-        this.durability = 0;
-      } else {
-        this.durability = this.durability - damage;
-      }
-    }
-  }
-  getDamage() {
-    if (this.durability == "Infinity") {
-     return this.attack;
-   } else {
-    if (this.durabilityConst * 0.3 >= this.durability) {
-      return this.attack / 2;
-    } else if (this.durability == 0) {
-      return 0;
-    } else {
-      return this.attack;
-    }
-  }
-}
-isBroken() {
-  if (this.durability == 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
+	takeDamage(damage) {
+		if (this.durability != "Infinity") {
+			if (this.durability - damage < 0) {
+				this.durability = 0;
+			} else {
+				this.durability = this.durability - damage;
+			}
+		}
+	}
+	getDamage() {
+		if (this.durability == "Infinity") {
+			return this.attack;
+		} else {
+			if (this.durabilityConst * 0.3 >= this.durability) {
+				return this.attack / 2;
+			} else if (this.durability == 0) {
+				return 0;
+			} else {
+				return this.attack;
+			}
+		}
+	}
+	isBroken() {
+		if (this.durability == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }
 
