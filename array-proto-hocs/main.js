@@ -29,7 +29,7 @@ console.log(func());
 execute(compareArrays([8, 9], [8, 9]));
 console.log(execute(compareArrays([8, 9], [8, 9])));
 
-function memorize(fn, limit) {
+function memoize(fn, limit) {
 
 }
 
