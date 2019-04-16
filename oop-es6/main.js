@@ -34,7 +34,9 @@ class Weapon {
 	isBroken() {
 		if (this.durability == 0) {
 			return true;
-		} 
+		} else {
+			return false;
+		}
 	}
 
 }
@@ -49,8 +51,8 @@ const axe = new Weapon('Секира', 27, 1, 800);
 const stickOfTheStorm = new Weapon('Посох Бури', 10, 3, 2);
 
 arm.takeDamage(6);
-console.log(arm);
-console.log(arm.durability);
+//console.log(arm);
+//console.log(arm.durability);
 arm.getDamage();
 console.log(arm.getDamage());
 console.log(arm.isBroken());

@@ -23,7 +23,7 @@ function compareArrays( arr1, arr2 ) {
 }
 
 function execute(func) {
-console.log(func());
+
 
 }
 execute(compareArrays([8, 9], [8, 9]));
@@ -33,14 +33,3 @@ function memoize(fn, limit) {
 
 }
 
-const sum = (a, b) => a + b;
-
-const mSum = memorize(sum(), 2); // 2 результата хранятся в памяти
-
-// Вызов этих функций даёт один и тот же результат
-console.log(sum( 3, 4 )); // 7
-/* 
-  разница только в том, что mSum запоминает результат (7)
-  и повторно не делает вычисления
- */
-console.log(memorize(sum(3, 4), 2));
