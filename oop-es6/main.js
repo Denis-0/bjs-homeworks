@@ -1,6 +1,7 @@
 "use strict"
 
 // Задача 1
+
 class Weapon {
 	constructor (name, attack, durability, range) {
 		this.name = name;
@@ -22,13 +23,13 @@ class Weapon {
 	getDamage() {
 		
 
-			if (this.durabilityConst * 0.3 >= this.durability) {
-				return this.attack / 2;
-			} else if (this.durability == 0) {
-				return 0;
-			} else {
-				return this.attack;
-			}
+		if (this.durabilityConst * 0.3 >= this.durability) {
+			return this.attack / 2;
+		} else if (this.durability == 0) {
+			return 0;
+		} else {
+			return this.attack;
+		}
 		
 	}
 	isBroken() {
@@ -60,46 +61,7 @@ console.log(arm.isBroken());
 
 // Задача 2
 
-// class Weapon {
-// 	constructor (name, attack, durability, range) {
-// 		this.name = name;
-// 		this.attack = attack;
-// 		this.durability = durability;
-// 		this.range = range;
-// 		this.durabilityConst = durability;
-// 	}
 
-// 	takeDamage(damage) {
-// 		if (this.durability != "Infinity") {
-// 			if (this.durability - damage < 0) {
-// 				this.durability = 0;
-// 			} else {
-// 				this.durability = this.durability - damage;
-// 			}
-// 		}
-// 	}
-// 	getDamage() {
-// 		if (this.durability == "Infinity") {
-// 			return this.attack;
-// 		} else {
-// 			if (this.durabilityConst * 0.3 >= this.durability) {
-// 				return this.attack / 2;
-// 			} else if (this.durability == 0) {
-// 				return 0;
-// 			} else {
-// 				return this.attack;
-// 			}
-// 		}
-// 	}
-// 	isBroken() {
-// 		if (this.durability == 0) {
-// 			return true;
-// 		} else {
-// 			return false;
-// 		}
-// 	}
-
-// }
 class Bow extends Weapon {
 	constructor(attack, durability, range) {
 		super(attack, durability, range);
@@ -156,21 +118,7 @@ class StickOfTheStorm extends Stick {
 	}
 }
 
-// const arm = new Arm(1, Infinity, 1);
-// const bow = new Bow(10, 200, 3);
-// const sword = new Sword(25, 500, 1);
-// const knife = new Knife(5, 300, 1);
-// const stick = new Stick(8, 300, 2);
-// const longBow = new LongBow(15, 4, 200);
-// const axe = new Axe(27, 1, 800);
-// const stickOfTheStorm = new StickOfTheStorm(10, 3, 2);
 
-// arm.takeDamage(6);
-// console.log(arm);
-// console.log(arm.durability);
-// arm.getDamage();
-// console.log(arm.getDamage());
-// console.log(arm.isBroken());
 
 console.log(arm);
 console.log(bow);
