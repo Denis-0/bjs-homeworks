@@ -35,21 +35,21 @@ class Weapon {
 	isBroken() {
 		if (this.durability == 0) {
 			return true;
-		} else {
-			return false;
-		}
+		} //else {
+			//return false;
+		//}
 	}
 
 }
 
-const arm = new Weapon('Рука', 1, Infinity, 1);
-const bow = new Weapon('Лук', 10, 200, 3);
-const sword = new Weapon('Меч', 25, 500, 1);
-const knife = new Weapon('Нож', 5, 300, 1);
-const stick = new Weapon('Посох', 8, 300, 2);
-const longBow = new Weapon('Длинный лук', 15, 4, 200);
-const axe = new Weapon('Секира', 27, 1, 800);
-const stickOfTheStorm = new Weapon('Посох Бури', 10, 3, 2);
+let arm = new Weapon('Рука', 1, Infinity, 1);
+let bow = new Weapon('Лук', 10, 200, 3);
+let sword = new Weapon('Меч', 25, 500, 1);
+let knife = new Weapon('Нож', 5, 300, 1);
+let stick = new Weapon('Посох', 8, 300, 2);
+let longBow = new Weapon('Длинный лук', 15, 4, 200);
+let axe = new Weapon('Секира', 27, 1, 800);
+let stickOfTheStorm = new Weapon('Посох Бури', 10, 3, 2);
 
 arm.takeDamage(6);
 //console.log(arm);
@@ -63,61 +63,67 @@ console.log(arm.isBroken());
 
 
 class Bow extends Weapon {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 		this.name = 'Лук';
 
 	}
 }
 class LongBow extends Bow {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 		this.name = 'Длинный Лук';
 
 	}
 }
 class Arm extends Weapon {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 		this.name = 'Рука';
 	}
 }
 class Sword extends Weapon {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 
 		this.name = 'Меч';
 	}
 }
 class Axe extends Sword {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 
 		this.name = 'Секира';
 	}
 }
 class Knife extends Weapon {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 
 		this.name = 'Нож';
 	}
 }
 class Stick extends Weapon {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 
 		this.name = 'Посох';
 	}
 }
 class StickOfTheStorm extends Stick {
-	constructor(attack, durability, range) {
-		super(attack, durability, range);
+	constructor(name, attack, durability, range) {
+		super(name, attack, durability, range);
 
 		this.name = 'Посох Бури';
 	}
 }
 
+//let arm = new Bow();
+
+console.log(arm.name); // Лук
+console.log(arm.attack); // 10
+console.log(arm.durability); // 200
+console.log(arm.range);
 
 
 console.log(arm);
