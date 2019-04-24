@@ -1,85 +1,65 @@
 "use strict"
 
 function compareArrays(arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  let set = {};
-  arr1.forEach((i) => {
-    if (set[i] !== undefined) {
-      set[i]++;
-    } else {
-      set[i] = 1;
-    }
-  });
-  let difference = arr2.every((i) => {
-    if (set[i] === undefined) {
-      return false;
-    } else {
-      set[i]--;
-      if (set[i] === 0) {
-        delete set[i];
-      }
-      return true;
-    }
-  });
-  return Object.keys(set) == 0 && difference;
+	if ((arr1.length != arr2.length)) {            
+		return false;
+	}
+	function isSame(e1, i) {
+		return e1 === arr2[i];
+	}
+	return arr1.every(isSame);
 }
 
+function memorize(fn, limit) {    
+	let results = [];
+
+	return function(...rest) {
+		let args = [...rest];        
+		let k = results.find(e1 => compareArrays(e1.args, args));
+
+		if (k) {
+			return k.result;
+		} else {
+			results.unshift({
+				args,
+				result: fn(...rest)
+			})
+
+			if (results.length > limit) {
+				results.shift();
+			}
+
+			return results;
+		}
+	}    
+}     
 
 
-
-// function compareArrays(arr1,arr2){
-//   if(!arr1  || !arr2) return
-
-//   let result;
-
-//   arr1.every((e1,i)=>arr2.every(e2=> {
-
-//       if(e1.length > 1 && e2.length){
-//         result = compare(e1,e2);
-//       }else if(e1 !== e2 ){
-//         result = false
-//       }else{
-//         result = true
-//       }
-//     })
-//   )
-
-//   return result
-
-// }
-
-compareArrays([8, 9], [8, 9]);
-console.log(compareArrays([8, 9], [8, 9]));
-const add = (x, y) => (x + y);
-console.log(add(3, 4));
-
-const memoize = (fn) => {
-  let memory = [];
-  return (...args) => {
-    for (let key in memory) {
-      let result = compareArrays(memory[key].args, args)
-      if (result) {
-        console.log('Fetching from memory');
-        return memory[key].result
-      }
-    }
-      console.log('Calculating result');
-      let result = fn(...args);
-      memory.push({args: args, result: result})
-      
-      return result;
-
-  }
+let sum = function(...rest) {
+	let sum = 0;
+	for (let i = 0; i < rest.length; i++) {
+		sum += rest[i];
+	}
+	return (sum);
 }
 
-const memoizedAdd = memoize(add);
-console.log(memoizedAdd(3, 4));  
-console.log(memoizedAdd(3, 4));  
-console.log(memoizedAdd(3, 6));
-console.log(memoizedAdd(3, 6));
+let mSum = memorize(sum, 10);
 
 
+console.log(compareArrays([1, 2, 3], [2, 3, 1]));
+console.log(compareArrays([8, 1, 2], [8, 1, 2]));
 
-
+console.log(mSum(3, 4, 5, 6));
+console.log(mSum(3, 4, 5, 6));
+console.log(mSum(3, 4, 556, 6));
+console.log(mSum(3, 4, 556, 6));
+console.log(mSum(3, 455, 5, 6));
+console.log(mSum(3, 4, 5));
+console.log(mSum(3, 5, 6));
+console.log(mSum(3));
+console.log(mSum(3, 4, 5, 6, 4, 5, 6));
+console.log(mSum(32, 42, 25, 6));
+console.log(mSum(3, 4, 55, 56));
+console.log(mSum(3, 64, 5, 61));
+console.log(mSum(3, 74, 5, 67, 123));
+console.log(mSum(3, 74, 53, 67, 123));
